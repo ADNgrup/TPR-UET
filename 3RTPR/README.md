@@ -31,12 +31,20 @@ Please check the predefined script in ```test.sh``` file and run it.
 
  
 
-### Experiment Results:
- - will be updated after paper is accepted
-
-
 ## Citation
+```
+@Article{Nguyen25TIP,
+  author    = {Anh D. Nguyen and Hoa N. Nguyen},
+  title     = {Enhancing Text-Based Person Retrieval by Combining Fused Representation and Reciprocal Learning With Adaptive Loss Refinement},
+  journal   = {IEEE Transactions on Image Processing},
+  year      = {2025},
+  volume    = {34},
+  pages     = {5147--5157},
+  doi       = {10.1109/TIP.2025.3594880},
+  issn      = {1941-0042}
+}
 
+```
 
 ## Acknowledgements
 The code is based on [IRRA](https://github.com/anosorae/IRRA) licensed under Apache 2.0.

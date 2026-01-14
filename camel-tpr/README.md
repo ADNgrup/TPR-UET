@@ -39,12 +39,20 @@ python test.py
 
  
 
-### Experiment Results:
- - will be updated after paper is accepted
-
 
 ## Citation
+```
+@Article{Nguyen25CAMLE,
+  author    = {Anh D. Nguyen and Hoa N. Nguyen},
+  title = {CAMEL: Combination of asymmetrically dual representation learning with mutual data filtering and masked language modeling for text-based person retrieval},
+  journal = {Neurocomputing},
+  pages = {132418},
+  year      = {2025},
+  issn = {0925-2312},
+  doi       = {10.1016/j.neucom.2025.132418}
+}
 
+```
 
 ## License
 
