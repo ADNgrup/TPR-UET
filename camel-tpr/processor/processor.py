@@ -311,14 +311,14 @@ def do_train(start_epoch, args, models:List[DATPS], train_loader, evaluator, opt
                 .format(epoch, time_per_batch,train_loader.batch_size / time_per_batch))
         if epoch % eval_period  == 0 :
             if get_rank() == 0:
-                for model in models:
+                for midx, model in enumerate(models):
                     top1, table = evaluator.eval([model.eval()], i2t_metric=False, return_table=True, print_log=False)
 
                     torch.cuda.empty_cache()
                     if best_top1 < top1:
                         best_top1 = top1
                         arguments["epoch"] = epoch
-                        # checkpointer.save("best", **arguments)
+                        checkpointers[midx].save("best", **arguments)
                     logger.info("\n\t==MODEL {}=> Validation Single Results - Epoch: {} - Top1={} \n ".format(model.name, epoch, top1) + str(table) + "===============")
 
                 top1, table = evaluator.eval([model.eval() for model in models], i2t_metric=False, return_table=True, print_log=False)
@@ -326,8 +326,8 @@ def do_train(start_epoch, args, models:List[DATPS], train_loader, evaluator, opt
                 if best_top1 < top1:
                     best_top1 = top1
                     arguments["epoch"] = epoch
-                    # checkpointer.save("best", **arguments)
-                logger.info("\n\t==MODEL MEAN=> Validation Single Results - Epoch: {} - Top1={} \n ".format(epoch, top1) + str(table) + "===============")
+                    for checkpointer in checkpointers: checkpointer.save("best-ensemble", **arguments)
+                logger.info("\n\t==MODEL MEAN=> Validation Ensemble Results - Epoch: {} - Top1={} \n ".format(epoch, top1) + str(table) + "===============")
 
     if get_rank() == 0:
         logger.info(f"best R1: {best_top1} at epoch {arguments['epoch']}")

@@ -4,7 +4,7 @@ PyTorch implementation for [ Enhancing Text-Based Person Retrieval by Combining 
 ### News!
 
 - [07/2025] Push Initial rep on Github. Citation, official code will be updated when the paper is published.
-
+- [01/2026] Reproducing the official code! Sorry everyone — we lost the original code and repository in an accident, so it’s taking some time to rebuild everything T.T
 
 ### 3RTPR framework
 ```
@@ -21,13 +21,10 @@ Text-based person retrieval is defined as the challenging task of searching for 
 ## Training and Evaluation
 
 ### Training new models
-
-```json
-
-```
+Please check the predefined script in ```scripts-slurm/train.sh``` file and run it.
 
 ### Evaluation
-Please check the predefined script in ```test.sh``` file and run it.
+Please check the predefined script in ```scripts-slurm/test.sh``` file and run it.
 
  
 
