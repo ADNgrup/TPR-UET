@@ -21,7 +21,7 @@ superior performance over existing methods.
 
 ### Training new models
 
-```json
+```python
 python run.py  --cfg config_model.yml \
   --d-names CUHK-PEDES   --l-name sdm tal mlm --bs 64 --saug-text \
   --ccd  //use noise filtering
